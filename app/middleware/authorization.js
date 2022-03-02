@@ -2,7 +2,7 @@
  * @Author: wuwei
  * @Date: 2022-03-01 18:41:00
  * @LastEditors: OBKoro1
- * @LastEditTime: 2022-03-02 17:13:21
+ * @LastEditTime: 2022-03-02 19:46:51
  * @FilePath: \egg-simple\app\middleware\authorization.js
  */
 'use strict';
@@ -12,8 +12,8 @@ module.exports = (options) => {
     let decode = '';
     if (token) {
       /* 实现单点登录,后面可以通过缓存实现，目前每次接口都要查询用户信息，有很多开销 */
-      const user = await ctx.app.mysql.get('users', { token: token.slice(7) });
-      if (!user || user.token != token.slice(7)) {
+      const user = await ctx.app.mysql.get('users', { token: token });
+      if (!user || user.token != token) {
         return ctx.body = {
           status: 401,
           message: 'token已过期，请重新登录！',
@@ -21,7 +21,7 @@ module.exports = (options) => {
       }
       try {
         // 解码验证token，
-        decode = ctx.app.jwt.verify(token.slice(7), options.secret);
+        decode = ctx.app.jwt.verify(token, options.secret);
         // 获取用户信息
         ctx.decode = decode;
       } catch (error) {

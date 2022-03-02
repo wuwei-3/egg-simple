@@ -2,7 +2,7 @@
  * @Author: wuwei
  * @Date: 2022-03-01 22:02:16
  * @LastEditors: OBKoro1
- * @LastEditTime: 2022-03-02 18:06:19
+ * @LastEditTime: 2022-03-02 19:47:45
  * @FilePath: \egg-simple\app\controller\user.js
  */
 'use strict';
@@ -35,10 +35,10 @@ class UserController extends Controller {
       }
       /* 默认普通用户 */
       let add = { uuid: uuid, ...userInfo, password: ctx.helper.md5(userInfo.password), type: userInfo.type || 2 }
-      console.log(11, add);
       await app.mysql.insert('users', add);
       this.success('新增用户成功')
     } catch (error) {
+      console.log(error);
       this.fail('新增用户失败')
     }
   }
