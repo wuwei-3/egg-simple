@@ -10,4 +10,6 @@ module.exports = app => {
   /* 目前只对api进行全局错误拦截 */
   router.get('/api/userList', controller.user.getUserList);
   router.get('/api/addUser', controller.user.addUser);
+  router.post('/api/updateUser', controller.user.editUser);
+  router.get('/api/deleteUser', controller.user.delUser);
 };

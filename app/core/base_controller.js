@@ -4,7 +4,7 @@ const { Controller } = require('egg');
 
 
 /**
- * BaseController
+ * BaseController 这里需要注意，所有错误日志必须打出来，否则看不出来日式
  * @class
  * @author wuwei3
  */
