@@ -16,7 +16,7 @@ module.exports = {
     enable: true,
     package: "egg-jwt"
   },
-  /* 字段校验 */
+  /* 字段类型校验 */
   validate: {
     enable: true,
     package: 'egg-validate',

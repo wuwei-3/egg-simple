@@ -31,15 +31,17 @@ module.exports = appInfo => {
       // load into agent, default is close
       agent: false,
     },
-    /* 参数校验 */
-    validate = {
-      // convert: false,
-      // validateRoot: false,
-    }
+
   };
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1645672039376_6484';
+
+  /* 参数校验 */
+  config.validate = {
+    // convert: false,
+    // validateRoot: false,
+  }
 
   /* 跨域 */
   config.security = {
@@ -58,11 +60,13 @@ module.exports = appInfo => {
 
   // 开启中间件，登录页不需要权限认证
   config.middleware = ['authorization', 'errorHandler'];
+
   /* 统一错误处理 */
   config.errorHandler = {
     enable: true,
     match: '/api',//仅对api错误进行处理
   }
+
   /* 登录鉴权 */
   config.authorization = {
     enable: true,
@@ -86,6 +90,7 @@ module.exports = appInfo => {
     fileExtensions: ['.apk', '.xlsx'], // 允许哪些后缀上传
     whitelist: ['.png', '.jpg', '.jpeg'],//白名单
   };
+
   /* 自定义加密字符串 */
   config.jwt = {
     secret: 'wuwei',
