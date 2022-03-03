@@ -5,13 +5,15 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  /* 可以使用引入方式 */
+  /* 两种引用方式都行 */
   require('./router/index')(app);
   /* 登录鉴权 */
   router.post('/login', controller.login.login);
   // 用于批量插入用户
-  // router.get('/test', controller.test.index);
-  /* 目前只对api进行全局错误拦截 */
+  router.get('/initUsers', controller.test.index);
+  /* 
+   * 目前只对api进行全局错误拦截
+  */
   // 用户增删改查
   router.get('/api/userList', controller.user.getUserList);
   router.get('/api/addUser', controller.user.addUser);
