@@ -4,21 +4,12 @@
  * @Autor: wuwei3
  * @Date: 2021-10-22 14:52:18
  * @LastEditors: OBKoro1
- * @LastEditTime: 2021-12-09 14:12:29
+ * @LastEditTime: 2022-03-03 11:36:51
  */
 const Subscription = require('egg').Subscription;
 
 class CleanDB extends Subscription {
-  /**
-   * @property {Object} schedule
-   *  - {String} type - schedule type, `worker` or `all` or your custom types.
-   *  - {String} [cron] - cron expression, see [below](#cron-style-scheduling)
-   *  - {Object} [cronOptions] - cron options, see [cron-parser#options](https://github.com/harrisiirak/cron-parser#options)
-   *  - {String | Number} [interval] - interval expression in millisecond or express explicitly like '1h'. see [below](#interval-style-scheduling)
-   *  - {Boolean} [immediate] - To run a scheduler at startup
-   *  - {Boolean} [disable] - whether to disable a scheduler, usually use in dynamic schedule
-   *  - {Array} [env] - only enable scheduler when match env list
-   */
+  /* 自定义定时器，可用于静态资源无用去除 */
   static get schedule () {
     return {
       type: 'worker',
