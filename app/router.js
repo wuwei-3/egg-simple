@@ -5,6 +5,8 @@
  */
 module.exports = app => {
   const { router, controller } = app;
+  /* 可以使用引入方式 */
+  require('./router/index')(app);
   /* 登录鉴权 */
   router.post('/login', controller.login.login);
   // 用于批量插入用户

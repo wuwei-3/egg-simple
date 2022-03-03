@@ -57,12 +57,12 @@ module.exports = appInfo => {
   /* 统一错误处理 */
   config.errorHandler = {
     enable: true,
-    match: '/api',
+    match: '/api',//仅对api错误进行处理
   }
   /* 登录鉴权 */
   config.authorization = {
     enable: true,
-    // ignore: '/list', // 这里可以忽略免token接口库，例如下载文件
+    // ignore: '/index', // 这里可以忽略免token接口库，例如下载文件等
     match (ctx) {
       const url = ctx.request.url;
       /* 配置除login外都开启登录校验 */
