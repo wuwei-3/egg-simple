@@ -2,7 +2,7 @@
  * @Author: wuwei
  * @Date: 2022-03-01 22:02:16
  * @LastEditors: OBKoro1
- * @LastEditTime: 2022-03-02 20:41:47
+ * @LastEditTime: 2022-03-03 09:10:15
  * @FilePath: \egg-simple\app\controller\user.js
  */
 'use strict';
@@ -89,7 +89,6 @@ class UserController extends Controller {
     } catch (error) {
       this.fail('删除用户失败')
     }
-
   }
 }
 

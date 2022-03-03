@@ -74,6 +74,14 @@ module.exports = appInfo => {
     }
   };
 
+  /* 文件上传限制 */
+  config.multipart = {
+    fileSize: '100mb',
+    mode: 'stream', // 上传方式为流方式
+    allowArrayField: true,
+    fileExtensions: ['.apk', '.xlsx'], // 允许哪些后缀上传
+    whitelist: ['.png', '.jpg', '.jpeg'],//白名单
+  };
   /* 自定义加密字符串 */
   config.jwt = {
     secret: 'wuwei',
