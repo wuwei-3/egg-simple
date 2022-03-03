@@ -15,5 +15,10 @@ module.exports = {
   jwt: {
     enable: true,
     package: "egg-jwt"
+  },
+  /* 字段校验 */
+  validate: {
+    enable: true,
+    package: 'egg-validate',
   }
 };

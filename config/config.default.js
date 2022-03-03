@@ -31,7 +31,11 @@ module.exports = appInfo => {
       // load into agent, default is close
       agent: false,
     },
-
+    /* 参数校验 */
+    validate = {
+      // convert: false,
+      // validateRoot: false,
+    }
   };
 
   // use for cookie sign key, should change to your own and keep security

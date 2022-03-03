@@ -21,5 +21,6 @@ module.exports = app => {
   // 消费增删改查
   // 大图展示接口
   // 上传文件接口
-  router.post('/api/uploadFile', controller.file.saveFile);
+  router.post('/api/uploadFile', controller.file.saveFile);//单个上传
+  router.post('/api/uploadMultipart', controller.file.saveFile); // 批量上传
 };
