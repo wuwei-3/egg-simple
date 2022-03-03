@@ -2,7 +2,7 @@
  * @Author: wuwei
  * @Date: 2022-03-03 09:15:46
  * @LastEditors: OBKoro1
- * @LastEditTime: 2022-03-03 09:59:34
+ * @LastEditTime: 2022-03-03 20:57:21
  * @FilePath: \egg-simple\app\controller\test.js
  */
 'use strict';
@@ -121,6 +121,7 @@ class TestController extends Controller {
       let row = {
         uuid: ctx.helper.uuid(),
         password: ctx.helper.md5(12345),
+        pid: ctx.helper.uuid(),//唯一外键
         phone: item,
         name: item,
         sex: 1,
